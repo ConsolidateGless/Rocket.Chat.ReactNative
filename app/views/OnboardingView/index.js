@@ -147,7 +147,7 @@ class OnboardingView extends React.Component {
 				<StatusBar theme={theme} />
 				<Image style={styles.onboarding} source={{ uri: 'onboarding' }} fadeDuration={0} />
 				<Text style={[styles.title, { color: themes[theme].titleText }]}>{I18n.t('Welcome_to_RocketChat')}</Text>
-				<Text style={[styles.subtitle, { color: themes[theme].auxiliaryText }]}>{I18n.t('Open_Source_Communication')}</Text>
+				{/* <Text style={[styles.subtitle, { color: themes[theme].auxiliaryText }]}>{I18n.t('Open_Source_Communication')}</Text> */}
 				<View style={[styles.buttonsContainer, isTablet && sharedStyles.tabletScreenContent]}>
 					<Button
 						type='secondary'
@@ -157,7 +157,7 @@ class OnboardingView extends React.Component {
 						testID='connect-server-button'
 						theme={theme}
 					/>
-					<Button
+					{/* <Button
 						type='secondary'
 						title={I18n.t('Join_the_community')}
 						subtitle='open.rocket.chat'
@@ -173,7 +173,7 @@ class OnboardingView extends React.Component {
 						onPress={this.createWorkspace}
 						testID='create-workspace-button'
 						theme={theme}
-					/>
+					/> */}
 				</View>
 				{this.renderClose()}
 			</SafeAreaView>
