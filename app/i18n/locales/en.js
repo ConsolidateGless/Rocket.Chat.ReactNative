@@ -1,3 +1,7 @@
+import config from '../../../app.json';
+
+const APP_NAME = config.displayName;
+
 export default {
 	'1_person_reacted': '1 person reacted',
 	'1_user': '1 user',
@@ -210,8 +214,8 @@ export default {
 	In_App_and_Desktop_Alert_info: 'Displays a banner at the top of the screen when app is open, and displays a notification on desktop',
 	Invisible: 'Invisible',
 	Invite: 'Invite',
-	is_a_valid_RocketChat_instance: 'is a valid Rocket.Chat instance',
-	is_not_a_valid_RocketChat_instance: 'is not a valid Rocket.Chat instance',
+	is_a_valid_RocketChat_instance: `is a valid ${ APP_NAME } instance`,
+	is_not_a_valid_RocketChat_instance: `is not a valid ${ APP_NAME } instance`,
 	is_typing: 'is typing',
 	Invalid_or_expired_invite_token: 'Invalid or expired invite token',
 	Invalid_server_version: 'The server you\'re trying to connect is using a version that\'s not supported by the app anymore: {{currentVersion}}.\n\nWe require version {{minVersion}}',
@@ -276,7 +280,7 @@ export default {
 	No_Reactions: 'No Reactions',
 	No_Read_Receipts: 'No Read Receipts',
 	Not_logged: 'Not logged',
-	Not_RC_Server: 'This is not a Rocket.Chat server.\n{{contact}}',
+	Not_RC_Server: `This is not a ${ APP_NAME } server.\n{{contact}}`,
 	Nothing: 'Nothing',
 	Nothing_to_save: 'Nothing to save!',
 	Notify_active_in_this_room: 'Notify active users in this room',
@@ -453,10 +457,10 @@ export default {
 	Voice_call: 'Voice call',
 	Websocket_disabled: 'Websocket is disabled for this server.\n{{contact}}',
 	Welcome: 'Welcome',
-	Welcome_to_RocketChat: 'Welcome to Rocket.Chat',
+	Welcome_to_RocketChat: `Welcome to ${ APP_NAME }`,
 	Whats_your_2fa: 'What\'s your 2FA code?',
 	Without_Servers: 'Without Servers',
-	Write_External_Permission_Message: 'Rocket Chat needs access to your gallery so you can save images.',
+	Write_External_Permission_Message: `${ APP_NAME } needs access to your gallery so you can save images.`,
 	Write_External_Permission: 'Gallery Permission',
 	Yes_action_it: 'Yes, {{action}} it!',
 	Yesterday: 'Yesterday',
@@ -468,7 +472,7 @@ export default {
 	you: 'you',
 	You: 'You',
 	Logged_out_by_server: 'You\'ve been logged out by the server. Please log in again.',
-	You_need_to_access_at_least_one_RocketChat_server_to_share_something: 'You need to access at least one Rocket.Chat server to share something.',
+	You_need_to_access_at_least_one_RocketChat_server_to_share_something: `You need to access at least one ${ APP_NAME } server to share something.`,
 	Your_certificate: 'Your Certificate',
 	Your_invite_link_will_expire_after__usesLeft__uses: 'Your invite link will expire after {{usesLeft}} uses.',
 	Your_invite_link_will_expire_on__date__or_after__usesLeft__uses: 'Your invite link will expire on {{date}} or after {{usesLeft}} uses.',

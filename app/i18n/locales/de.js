@@ -1,3 +1,7 @@
+import config from '../../../app.json';
+
+const APP_NAME = config.displayName;
+
 export default {
 	'1_person_reacted': '1 Person hat reagiert',
 	'1_user': '1 Benutzer',
@@ -210,8 +214,8 @@ export default {
 	In_App_and_Desktop_Alert_info: 'Zeigt ein Banner oben am Bildschirm, wenn die App geöffnet ist und eine Benachrichtigung auf dem Desktop.',
 	Invisible: 'Unsichtbar',
 	Invite: 'Einladen',
-	is_a_valid_RocketChat_instance: 'ist eine gültige Rocket.Chat-Instanz',
-	is_not_a_valid_RocketChat_instance: 'ist keine gültige Rocket.Chat-Instanz',
+	is_a_valid_RocketChat_instance: `ist eine gültige ${ APP_NAME }-Instanz`,
+	is_not_a_valid_RocketChat_instance: `ist keine gültige ${ APP_NAME }-Instanz`,
 	is_typing: 'tippt',
 	Invalid_or_expired_invite_token: 'Ungültiger oder abgelaufener Einladungscode',
 	Invalid_server_version: 'Der Server, zu dem Sie eine Verbindung herstellen möchten, verwendet eine Version, die von der App nicht mehr unterstützt wird: {{currentVersion}}.\n\nWir benötigen Version {{MinVersion}}.',
@@ -247,7 +251,7 @@ export default {
 	messages: 'Nachrichten',
 	Messages: 'Mitteilungen',
 	Message_Reported: 'Nachricht gemeldet',
-	Microphone_Permission_Message: 'Rocket.Chat benötigt Zugriff auf Ihr Mikrofon, damit Sie eine Audionachricht senden können.',
+	Microphone_Permission_Message: 'Consolidate Chat benötigt Zugriff auf Ihr Mikrofon, damit Sie eine Audionachricht senden können.',
 	Microphone_Permission: 'Mikrofonberechtigung',
 	Mute: 'Stumm',
 	muted: 'stummgeschaltet',
@@ -276,7 +280,7 @@ export default {
 	No_Reactions: 'Keine Reaktionen',
 	No_Read_Receipts: 'Keine Lesebestätigungen',
 	Not_logged: 'Nicht protokolliert',
-	Not_RC_Server: 'Dies ist kein Rocket.Chat-Server.\n{{contact}}',
+	Not_RC_Server: `Dies ist kein ${ APP_NAME }-Server.\n{{contact}}`,
 	Nothing: 'Nichts',
 	Nothing_to_save: 'Nichts zu speichern!',
 	Notify_active_in_this_room: 'Aktive Benutzer in diesem Raum benachrichtigen',
@@ -453,10 +457,10 @@ export default {
 	Voice_call: 'Sprachanruf',
 	Websocket_disabled: 'Websockets sind auf diesem Server nicht aktiviert.\n{{contact}}',
 	Welcome: 'Herzlich willkommen',
-	Welcome_to_RocketChat: 'Willkommen bei Rocket.Chat',
+	Welcome_to_RocketChat: 'Willkommen bei Consolidate Chat',
 	Whats_your_2fa: 'Wie lautet Ihr 2FA-Code?',
 	Without_Servers: 'Ohne Server',
-	Write_External_Permission_Message: 'Rocket.Chat benötigt Zugriff auf Ihre Galerie um Bilder speichern zu können.',
+	Write_External_Permission_Message: 'Consolidate Chat benötigt Zugriff auf Ihre Galerie um Bilder speichern zu können.',
 	Write_External_Permission: 'Galerie-Zugriff',
 	Yes_action_it: 'Ja, {{action}}!',
 	Yesterday: 'Gestern',
@@ -468,7 +472,7 @@ export default {
 	you: 'Sie',
 	You: 'Sie',
 	Logged_out_by_server: 'Du bist vom Server abgemeldet worden. Bitte melde dich wieder an.',
-	You_need_to_access_at_least_one_RocketChat_server_to_share_something: 'Sie benötigen Zugang zu mindestens einem Rocket.Chat-Server um etwas zu teilen.',
+	You_need_to_access_at_least_one_RocketChat_server_to_share_something: `Sie benötigen Zugang zu mindestens einem ${ APP_NAME }-Server um etwas zu teilen.`,
 	Your_certificate: 'Ihr Zertifikat',
 	Your_invite_link_will_expire_after__usesLeft__uses: 'Dein Einladungs-Link wird nach {{usesLeft}} Benutzungen ablaufen.',
 	Your_invite_link_will_expire_on__date__or_after__usesLeft__uses: 'Dein Einladungs-Link wird am {{date}} oder nach {{usesLeft}} Benutzungen ablaufen.',
