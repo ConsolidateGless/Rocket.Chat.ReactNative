@@ -12,6 +12,10 @@ export const SWITCH_TRACK_COLOR = {
 	true: '#2de0a5'
 };
 
+// const colorPrimaryRocketChat = '#1d74f5';
+const colorPrimaryConsolidate = '#4C5B66';
+const colorPrimary = colorPrimaryConsolidate;
+
 export const themes = {
 	light: {
 		backgroundColor: '#ffffff',
@@ -28,17 +32,17 @@ export const themes = {
 		controlText: '#54585e',
 		auxiliaryText: '#9ca2a8',
 		infoText: '#6d6d72',
-		tintColor: '#1d74f5',
+		tintColor: colorPrimary,
 		auxiliaryTintColor: '#caced1',
-		actionTintColor: '#1d74f5',
+		actionTintColor: colorPrimary,
 		separatorColor: '#cbcbcc',
 		navbarBackground: '#ffffff',
 		headerBorder: '#B2B2B2',
 		headerBackground: isIOS ? '#f8f8f8' : '#2f343d',
 		headerSecondaryBackground: '#ffffff',
-		headerTintColor: isAndroid ? '#ffffff' : '#1d74f5',
+		headerTintColor: isAndroid ? '#ffffff' : colorPrimary,
 		headerTitleColor: isAndroid ? '#ffffff' : '#0d0e12',
-		headerSecondaryText: isAndroid ? '#9ca2a8' : '#1d74f5',
+		headerSecondaryText: isAndroid ? '#9ca2a8' : colorPrimary,
 		toastBackground: '#0C0D0F',
 		videoBackground: '#1f2329',
 		favoriteBackground: '#ffbb00',
@@ -63,17 +67,17 @@ export const themes = {
 		controlText: '#dadde6',
 		auxiliaryText: '#9297a2',
 		infoText: '#6D6D72',
-		tintColor: '#1d74f5',
+		tintColor: colorPrimary,
 		auxiliaryTintColor: '#cdcdcd',
-		actionTintColor: '#1d74f5',
+		actionTintColor: colorPrimary,
 		separatorColor: '#2b2b2d',
 		navbarBackground: '#0b182c',
 		headerBorder: '#2F3A4B',
 		headerBackground: '#0b182c',
 		headerSecondaryBackground: '#0b182c',
-		headerTintColor: isAndroid ? '#ffffff' : '#1d74f5',
+		headerTintColor: isAndroid ? '#ffffff' : colorPrimary,
 		headerTitleColor: '#FFFFFF',
-		headerSecondaryText: isAndroid ? '#9297a2' : '#1d74f5',
+		headerSecondaryText: isAndroid ? '#9297a2' : colorPrimary,
 		toastBackground: '#0C0D0F',
 		videoBackground: '#1f2329',
 		favoriteBackground: '#ffbb00',
