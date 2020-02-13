@@ -1,8 +1,4 @@
 <resources>
     <string name="app_name">[DEVELOP] Consolidate Chat</string>
-<<<<<<< Updated upstream
-    <string name="share_extension_name">[DEVELOP] Consolidate Chat</string>
-=======
->>>>>>> Stashed changes
     <string name="no_browser_found">No Browser Found</string>
 </resources>

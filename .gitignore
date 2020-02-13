@@ -57,3 +57,6 @@ fastlane/screenshots
 coverage
 
 .vscode/
+
+# DB: Exclude android build
+android/**/*.bundle
