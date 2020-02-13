@@ -10,21 +10,26 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-
 - task: DownloadSecureFile@1
   inputs:
     secureFile: 'my-upload-key.keystore'
+
 - task: NodeTool@0
   inputs:
     versionSpec: '12.14.0'
   displayName: 'Install Node.js'
 
 - script: |
-    npm install
+    npm install yarn
+    yarn
+  displayName: 'npm install'
+
+- script: |
     npm run bundle-android
     cd android
     ./gradlew assembleDebug
-  displayName: 'npm install'
+  displayName: 'npm bundle-android'
+
 - task: AndroidSigning@3
   inputs:
     apkFiles: 'android/**/*.apk'
