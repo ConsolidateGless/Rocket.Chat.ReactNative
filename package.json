@@ -11,7 +11,7 @@
     "ios": "react-native run-ios",
     "log-android": "react-native log-android",
     "android": "react-native run-android",
-    "bundle-android": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle —-assets-dest android/app/src/main/res",
+    "bundle-android": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/",
     "snyk-protect": "snyk protect",
     "precommit": "eslint . && jest",
     "generate-source-maps-ios": "react-native bundle --platform ios --dev false --entry-file index.js --bundle-output ios-release.bundle --sourcemap-output ios-release.bundle.map",

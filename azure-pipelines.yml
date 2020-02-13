@@ -27,7 +27,7 @@ steps:
 - script: |
     npm run bundle-android
     cd android
-    ./gradlew assembleDebug
+    ./gradlew clean assembleDebug
   displayName: 'npm bundle-android'
 
 - task: AndroidSigning@3
