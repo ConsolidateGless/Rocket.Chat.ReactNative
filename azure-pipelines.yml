@@ -1,0 +1,32 @@
+# Node.js
+# Build a general Node.js project with npm.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger:
+- develop
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+
+- task: DownloadSecureFile@1
+  inputs:
+    secureFile: 'my-upload-key.keystore'
+- task: NodeTool@0
+  inputs:
+    versionSpec: '12.14.0'
+  displayName: 'Install Node.js'
+
+- script: |
+    npm install
+    npm run bundle-android
+    cd android
+    ./gradlew assembleDebug
+  displayName: 'npm install'
+- task: AndroidSigning@3
+  inputs:
+    apkFiles: 'android/**/*.apk'
+    apksignerKeystoreFile: 'my-upload-key.keystore'
+    apksignerKeystorePassword: '$(KEYSTORE_PASSWORD)'
