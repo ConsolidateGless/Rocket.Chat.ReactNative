@@ -1,35 +1,42 @@
 {
   "project_info": {
-    "project_number": "115198584049",
-    "firebase_url": "https://rocketchat-reactnative-test.firebaseio.com",
-    "project_id": "rocketchat-reactnative-test",
-    "storage_bucket": "rocketchat-reactnative-test.appspot.com"
+    "project_number": "973491412712",
+    "firebase_url": "https://gless-960ef.firebaseio.com",
+    "project_id": "gless-960ef",
+    "storage_bucket": "gless-960ef.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:115198584049:android:8be27b1f7c42a2ed",
+        "mobilesdk_app_id": "1:973491412712:android:0aaee72345340004",
         "android_client_info": {
-          "package_name": "chat.rocket.reactnative"
+          "package_name": "io.gless.app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "115198584049-ack609b1338b827fta26s9rd2ab1aad5.apps.googleusercontent.com",
+          "client_id": "973491412712-lque25h9hfgjlk6upirgh3jg69dagnso.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAWwowhAfACHBw3YxmDOXY3QyakgjhJLqc"
+          "current_key": "AIzaSyA2Zr2EO0X-dJW9JQ-ITdLobRjHne99Yjk"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "115198584049-ack609b1338b827fta26s9rd2ab1aad5.apps.googleusercontent.com",
+              "client_id": "973491412712-lque25h9hfgjlk6upirgh3jg69dagnso.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "973491412712-jq4ab140nl47orjmj6q303mhgnq1o4pk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.gless.app"
+              }
             }
           ]
         }
