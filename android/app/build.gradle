@@ -219,6 +219,7 @@ dependencies {
     implementation project(':@react-native-community_viewpager')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.facebook.react:react-native:+"  // From node_modules
+    
     // implementation "com.google.firebase:firebase-messaging:18.0.0"
     implementation "com.google.firebase:firebase-messaging:20.0.0"
     // implementation "com.google.firebase:firebase-core:16.0.9"
