@@ -1,4 +1,4 @@
-package chat.rocket.reactnative;
+package io.gless.chat;
 
 import android.app.Notification;
 import android.app.NotificationChannel;

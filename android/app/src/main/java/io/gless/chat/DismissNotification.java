@@ -1,4 +1,4 @@
-package chat.rocket.reactnative;
+package io.gless.chat;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

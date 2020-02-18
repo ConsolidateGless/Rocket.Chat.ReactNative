@@ -1,4 +1,4 @@
-package chat.rocket.reactnative;
+package io.gless.chat;
 
 import android.app.Application;
 import android.content.Context;
@@ -13,7 +13,7 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
 
-import chat.rocket.reactnative.generated.BasePackageList;
+import io.gless.chat.generated.BasePackageList;
 
 import org.unimodules.adapters.react.ModuleRegistryAdapter;
 import org.unimodules.adapters.react.ReactModuleRegistryProvider;

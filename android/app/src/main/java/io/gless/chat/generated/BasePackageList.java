@@ -1,4 +1,4 @@
-package chat.rocket.reactnative.generated;
+package io.gless.chat.generated;
 
 import java.util.Arrays;
 import java.util.List;

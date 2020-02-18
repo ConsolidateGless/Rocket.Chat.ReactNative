@@ -1,4 +1,4 @@
-package chat.rocket.reactnative.share;
+package io.gless.chat.share;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

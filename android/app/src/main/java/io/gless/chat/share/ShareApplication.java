@@ -1,6 +1,6 @@
-package chat.rocket.reactnative.share;
+package io.gless.chat.share;
 
-import chat.rocket.reactnative.BuildConfig;
+import io.gless.chat.BuildConfig;
 
 import chat.rocket.SharePackage;
 
