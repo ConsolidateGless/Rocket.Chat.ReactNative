@@ -32,10 +32,10 @@
               "client_type": 3
             },
             {
-              "client_id": "973491412712-jq4ab140nl47orjmj6q303mhgnq1o4pk.apps.googleusercontent.com",
+              "client_id": "973491412712-6cmcu798sirmf0e3uq3978kmbp41tkap.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "io.gless.app"
+                "bundle_id": "io.gless.chat"
               }
             }
           ]
@@ -68,10 +68,10 @@
               "client_type": 3
             },
             {
-              "client_id": "973491412712-jq4ab140nl47orjmj6q303mhgnq1o4pk.apps.googleusercontent.com",
+              "client_id": "973491412712-6cmcu798sirmf0e3uq3978kmbp41tkap.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "io.gless.app"
+                "bundle_id": "io.gless.chat"
               }
             }
           ]
