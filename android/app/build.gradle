@@ -150,7 +150,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "io.gless.chat"
+        applicationId "io.gless.app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode VERSIONCODE as Integer
