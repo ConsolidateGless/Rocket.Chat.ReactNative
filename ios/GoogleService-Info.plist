@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>115198584049-0efgfvm0oh9ap55g7epmqnjm27mq3j4e.apps.googleusercontent.com</string>
+	<string>973491412712-6cmcu798sirmf0e3uq3978kmbp41tkap.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.115198584049-0efgfvm0oh9ap55g7epmqnjm27mq3j4e</string>
+	<string>com.googleusercontent.apps.973491412712-6cmcu798sirmf0e3uq3978kmbp41tkap</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDEMLMz0En0vwFBlLSQkQ9oyhmCMPcpZxc</string>
+	<string>AIzaSyCrbRDPppuhVo4p4bhC7I6SQOxFbxKPEis</string>
 	<key>GCM_SENDER_ID</key>
-	<string>115198584049</string>
+	<string>973491412712</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>chat.rocket.reactnative</string>
+	<string>io.gless.chat</string>
 	<key>PROJECT_ID</key>
-	<string>rocketchat-reactnative-test</string>
+	<string>gless-960ef</string>
 	<key>STORAGE_BUCKET</key>
-	<string>rocketchat-reactnative-test.appspot.com</string>
+	<string>gless-960ef.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:115198584049:ios:8be27b1f7c42a2ed</string>
+	<string>1:973491412712:ios:db25a25f7674fb9023f35d</string>
 	<key>DATABASE_URL</key>
-	<string>https://rocketchat-reactnative-test.firebaseio.com</string>
+	<string>https://gless-960ef.firebaseio.com</string>
 </dict>
 </plist>
