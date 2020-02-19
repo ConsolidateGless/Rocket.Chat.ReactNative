@@ -734,7 +734,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = chat.gless.io;
+				PRODUCT_BUNDLE_IDENTIFIER = io.gless.chat;
 				PRODUCT_NAME = "Consolidate Chat";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "RocketChatRN-Bridging-Header.h";
@@ -784,7 +784,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = chat.gless.io;
+				PRODUCT_BUNDLE_IDENTIFIER = io.gless.chat;
 				PRODUCT_NAME = "Consolidate Chat";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "RocketChatRN-Bridging-Header.h";
@@ -898,7 +898,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = chat.gless.io.ShareExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = io.gless.chat.ShareExtension;
 				PRODUCT_NAME = "Consolidate Chat";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -1010,7 +1010,7 @@
 					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
 				);
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = chat.gless.io.ShareExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = io.gless.chat.ShareExtension;
 				PRODUCT_NAME = "Consolidate Chat";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
