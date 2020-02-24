@@ -10,28 +10,30 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- task: DownloadSecureFile@1
-  inputs:
-    secureFile: 'my-upload-key.keystore'
-
 - task: NodeTool@0
   inputs:
-    versionSpec: '12.14.0'
+    versionSpec: '12.16.1'
   displayName: 'Install Node.js'
 
 - script: |
     npm install yarn
     yarn
-  displayName: 'npm install'
+  displayName: 'Install dependencies'
 
 - script: |
-    npm run bundle-android
-    cd android
-    ./gradlew clean assembleDebug
-  displayName: 'npm bundle-android'
+    npm run android-build-release
+  displayName: 'Bundle Android Release'
+
+- task: DownloadSecureFile@1
+  inputs:
+    secureFile: 'my-upload-key.keystore'
+  displayName: 'Download Keystore file'
 
 - task: AndroidSigning@3
   inputs:
-    apkFiles: 'android/**/*.apk'
+    apkFiles: 'android/app/build/outputs/apk/release/*.apk'
     apksignerKeystoreFile: 'my-upload-key.keystore'
     apksignerKeystorePassword: '$(KEYSTORE_PASSWORD)'
+    apksignerKeystoreAlias: 'my-key-alias'
+    apksignerKeyPassword: '$(KEYSTORE_PASSWORD)'
+  displayName: 'Signing Android Release APK'
