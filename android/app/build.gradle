@@ -161,7 +161,8 @@ android {
 
     signingConfigs {
         release {
-            if (project.hasProperty('MYAPP_UPLOAD_STORE_FILE')) {
+            // Release build on local machine
+            if (project.hasProperty('MYAPP_UPLOAD_STORE_FILE') && pass) {
                 storeFile file(MYAPP_UPLOAD_STORE_FILE)
                 storePassword pass
                 keyAlias MYAPP_UPLOAD_KEY_ALIAS

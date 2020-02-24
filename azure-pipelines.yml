@@ -17,6 +17,7 @@ steps:
 
 - script: npm run android-build-release
   displayName: 'Bundle and release'
+  continueOnError: true
 
 # - task: Gradle@2
 #   inputs:

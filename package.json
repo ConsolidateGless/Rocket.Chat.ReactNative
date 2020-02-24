@@ -11,7 +11,6 @@
     "ios": "react-native run-ios",
     "android": "react-native run-android",
     "log-android": "react-native log-android",
-    "android-bundle-test": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/",
     "android-build-debug": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/ && cd android && ./gradlew clean assembleDebug && cd ..",
     "android-build-release": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/build/intermediates/res/merged/release/ && cd android && ./gradlew clean assembleRelease && cd ..",
     "snyk-protect": "snyk protect",
