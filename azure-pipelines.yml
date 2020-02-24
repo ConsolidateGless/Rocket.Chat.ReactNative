@@ -4,7 +4,7 @@ trigger:
     - azure-pipelines
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'macOS-10.13'
 
 steps:
 - task: NodeTool@0
@@ -14,9 +14,6 @@ steps:
 
 - script: yarn install
   displayName: 'Install dependencies'
-
-- script: sudo sysctl -w fs.inotify.max_user_watches=524288
-  displayName: 'Increase file watcher amount'
 
 - script: npm run android-bundle-test
   displayName: 'Bundle test'
