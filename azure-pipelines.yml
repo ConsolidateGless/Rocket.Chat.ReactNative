@@ -15,15 +15,15 @@ steps:
 - script: yarn install
   displayName: 'Install dependencies'
 
-- script: npm run android-bundle-test
-  displayName: 'Bundle test'
+- script: npm run android-build-release
+  displayName: 'Bundle and release'
 
-- task: Gradle@2
-  inputs:
-    workingDirectory: 'android'
-    gradleWrapperFile: 'android/gradlew'
-    tasks: 'clean assembleRelease'
-  continueOnError: false
+# - task: Gradle@2
+#   inputs:
+#     workingDirectory: 'android'
+#     gradleWrapperFile: 'android/gradlew'
+#     tasks: 'clean assembleRelease'
+#   continueOnError: false
 
 - script: mv android/app/build/outputs/apk/release/app-release-unsigned.apk app-release.apk
   displayName: Android Postprocess
