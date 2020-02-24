@@ -4,7 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 trigger:
-- master
+- azure-pipelines
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -18,7 +18,7 @@ steps:
 - script: yarn install
   displayName: yarn install
 
-- script: npx react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/'
+- script: npx run react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/'
   displayName: bundle android
 
 - task: Gradle@2
