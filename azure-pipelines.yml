@@ -4,7 +4,7 @@ trigger:
     - azure-pipelines
 
 pool:
-  vmImage: 'macOS-10.13'
+  vmImage: 'macOS-10.15'
 
 steps:
 - task: NodeTool@0
@@ -22,7 +22,7 @@ steps:
   inputs:
     workingDirectory: 'android'
     gradleWrapperFile: 'android/gradlew'
-    tasks: 'assembleRelease'
+    tasks: 'clean assembleRelease'
   continueOnError: false
 
 - script: mv android/app/build/outputs/apk/release/app-release-unsigned.apk app-release.apk
