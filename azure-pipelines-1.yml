@@ -10,5 +10,35 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: |
-    sudo sysctl -w fs.inotify.max_user_watches=524288
+- task: NodeTool@0
+  inputs:
+    versionSpec: '12.16.1'
+  displayName: 'Install Node.js'
+
+- script: yarn install
+  displayName: yarn install
+
+- task: Gradle@2
+  inputs:
+    workingDirectory: 'android'
+    gradleWrapperFile: 'android/gradlew'
+    tasks: 'assembleRelease'
+  continueOnError: false
+
+- script: mv android/app/build/outputs/apk/release/app-release-unsigned.apk app-release.apk
+  displayName: Android Postprocess
+  continueOnError: false
+- task: DownloadSecureFile@1
+  inputs:
+    secureFile: 'my-upload-key.keystore'
+  displayName: 'Download Keystore file'
+  
+- task: AndroidSigning@3
+  inputs:
+    apkFiles: 'app-release.apk'
+    apksign: true
+    apksignerKeystoreFile: 'my-upload-key.keystore'
+    apksignerKeystorePassword: '$(KEYSTORE_PASSWORD)'
+    apksignerKeystoreAlias: 'my-key-alias'
+    apksignerKeyPassword: '$(KEYSTORE_PASSWORD)'
+  displayName: 'Signing Android Release APK'
