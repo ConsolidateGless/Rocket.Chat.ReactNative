@@ -158,10 +158,12 @@ android {
         applicationId "io.gless.chat"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode VERSIONCODE as Integer 
-        versionName VERSIONNAME as String
+        versionCode versionMajor * 10000 + versionMinor * 100 + versionPatch
+        versionName "${versionMajor}.${versionMinor}.${versionPatch}"
         vectorDrawables.useSupportLibrary = true
-        manifestPlaceholders = [BugsnagAPIKey: BugsnagAPIKey as String]   
+        manifestPlaceholders = [BugsnagAPIKey: BugsnagAPIKey as String]
+
+        setProperty("archivesBaseName", "consolidate-chat.$versionName")
     }
 
     signingConfigs {
