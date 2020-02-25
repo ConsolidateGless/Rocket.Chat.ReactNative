@@ -138,8 +138,13 @@ def jscFlavor = 'org.webkit:android-jsc:+'
  */
 def enableHermes = project.ext.react.get("enableHermes", false);
 
-// Add this line
+// Get keystore password from keychain (if building locally!)
 def pass = getPassword("Consolidate","android_keystore")
+println('VALUE  OF PASS:')
+println(pass)
+
+def hasKeystorePassword = pass.length() > 0;
+println(hasKeystorePassword)
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -160,14 +165,12 @@ android {
     }
 
     signingConfigs {
-        release {
-            // Release build on local machine
-            if (project.hasProperty('MYAPP_UPLOAD_STORE_FILE') && pass) {
-                storeFile file(MYAPP_UPLOAD_STORE_FILE)
-                storePassword pass
-                keyAlias MYAPP_UPLOAD_KEY_ALIAS
-                keyPassword pass
-            }
+        releaseLocal {
+            // Release build on local machine 
+            storeFile file(MYAPP_UPLOAD_STORE_FILE)
+            storePassword pass
+            keyAlias MYAPP_UPLOAD_KEY_ALIAS
+            keyPassword pass
         }
     }
     splits {
@@ -182,7 +185,17 @@ android {
         release {
             minifyEnabled enableProguardInReleaseBuilds
             setProguardFiles([getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'])
-            signingConfig signingConfigs.release
+
+            println('IS PASSWORD PRESENT:')
+            println(hasKeystorePassword)
+            if(hasKeystorePassword) {
+                // Take local config
+                println('TAKING LOCAL CONFIG')
+                signingConfig signingConfigs.releaseLocal
+            } else {
+                // Nothing else here, as in CI (Azure) mode we sign it after and not during the build
+                println('NO SIGNING')
+            }
         }
     }
     // applicationVariants are e.g. debug, release

@@ -16,24 +16,16 @@ steps:
   displayName: 'Install dependencies'
 
 - script: npm run android-build-release
-  displayName: 'Bundle and release'
-  continueOnError: true
+  displayName: 'Android | Bundle and build'
 
-# - task: Gradle@2
-#   inputs:
-#     workingDirectory: 'android'
-#     gradleWrapperFile: 'android/gradlew'
-#     tasks: 'clean assembleRelease'
-#   continueOnError: false
-
+# PASST SO WENN NICHT SIGNED!
 - script: mv android/app/build/outputs/apk/release/app-release-unsigned.apk app-release.apk
-  displayName: Android Postprocess
-  continueOnError: false
+  displayName: 'Android | Postbuild'
 
 - task: DownloadSecureFile@1
   inputs:
     secureFile: 'my-upload-key.keystore'
-  displayName: 'Download Keystore file'
+  displayName: 'Android | Download keystore file'
 
 - task: AndroidSigning@3
   inputs:
@@ -43,4 +35,21 @@ steps:
     apksignerKeystorePassword: '$(KEYSTORE_PASSWORD)'
     apksignerKeystoreAlias: 'my-key-alias'
     apksignerKeyPassword: '$(KEYSTORE_PASSWORD)'
-  displayName: 'Signing Android Release APK'
+  displayName: 'Android | Signing release APK'
+
+# Copy to Gless server
+- task: FtpUpload@2
+  inputs:
+    credentialsOption: 'inputs'
+    serverUrl: '$(FTP_SERVER)'
+    username: '$(FTP_USER)'
+    password: '$(FTP_PASSWORD)'
+    rootDirectory: '.'
+    filePatterns: 'app-release.apk'
+    remoteDirectory: '/downloads/android/'
+    enableUtf8: true
+    clean: false
+    cleanContents: false
+    preservePaths: true
+    trustSSL: true
+  displayName: Android | Copy APK to Gless server'
