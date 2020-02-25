@@ -44,10 +44,10 @@ Now you need to provide the `storePassword` and `keyPassword` in the [app gradle
 
 ❗️**BUT BE SURE NOT TO COMMIT THE PASSWORD IN PLAIN TEXT!** ❗️
 
-Okay, enough capsing around, lets head to [building your release APK locally](#building).
+Okay, enough capsing around, lets head to [building your release .apk locally](#building).
 
 #### Building
-If you have setup the Signing stuff, you can build your release .APK with
+If you have setup the Signing stuff, you can build your release .apk with
 ```bash
 npm run android-build-release
 ```
@@ -58,7 +58,10 @@ TODO:
 Gather relevant Information and place it right here.
 
 # Continous Integration
-Goal is to setup a CI so it uploads our release ready Android and iOS app's to our Gless server. I'll inform you when it's time ;) 
+Currently the Azure CI pipeline supports building and signing Android apps.
 
+## Android
+Whenever a push to our `develop` branch is detected, tbe CI kicks in and builds the Android app. When the build finishes successfully, the .apk is sent to our Gless server and available at [https://dl.gless.io/downloads/android/](https://dl.gless.io/downloads/android/). Currently, the build needs roughly 15 minutes to complete.
 
-
+## iOS
+TBD. Need a lot of 🍻
