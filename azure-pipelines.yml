@@ -1,13 +1,10 @@
-# Node.js
-# Build a general Node.js project with npm.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
-
 trigger:
-- develop
+  branches:
+    include:
+    - develop
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'macOS-10.15'
 
 steps:
 - task: NodeTool@0
@@ -15,29 +12,47 @@ steps:
     versionSpec: '12.16.1'
   displayName: 'Install Node.js'
 
-- script: |
-    npm install yarn
-    yarn
+- script: yarn install
   displayName: 'Install dependencies'
 
-- script: |
-    sudo sysctl -w fs.inotify.max_user_watches=524288
-  displayName: 'Increase file watcher amount'
+- script: npm run android-build-release
+  displayName: 'Android | Bundle and build'
 
+# Move the file to root and strip out '-release-unsigned'
 - script: |
-    npm run android-build-release
-  displayName: 'Bundle Android Release'
+    mv android/app/build/outputs/apk/release/*.apk .
+    brew install rename
+    rename 's/-release-unsigned.apk/.apk/' *.apk
+  displayName: 'Android | Move and rename build artifact'
 
 - task: DownloadSecureFile@1
   inputs:
     secureFile: 'my-upload-key.keystore'
-  displayName: 'Download Keystore file'
+  displayName: 'Android | Download keystore file'
 
 - task: AndroidSigning@3
   inputs:
-    apkFiles: 'android/app/build/outputs/apk/release/*.apk'
+    apkFiles: '*.apk'
+    apksign: true
     apksignerKeystoreFile: 'my-upload-key.keystore'
     apksignerKeystorePassword: '$(KEYSTORE_PASSWORD)'
     apksignerKeystoreAlias: 'my-key-alias'
     apksignerKeyPassword: '$(KEYSTORE_PASSWORD)'
-  displayName: 'Signing Android Release APK'
+  displayName: 'Android | Signing APK'
+
+# Copy to Gless server
+- task: FtpUpload@2
+  inputs:
+    credentialsOption: 'inputs'
+    serverUrl: '$(FTP_SERVER)'
+    username: '$(FTP_USER)'
+    password: '$(FTP_PASSWORD)'
+    rootDirectory: '.'
+    filePatterns: '*.apk'
+    remoteDirectory: '/downloads/android/'
+    enableUtf8: true
+    clean: false
+    cleanContents: false
+    preservePaths: true
+    trustSSL: true
+  displayName: 'Android | Copy APK to Gless server'

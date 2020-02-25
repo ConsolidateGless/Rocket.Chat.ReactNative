@@ -138,8 +138,9 @@ def jscFlavor = 'org.webkit:android-jsc:+'
  */
 def enableHermes = project.ext.react.get("enableHermes", false);
 
-// Add this line
+// Get keystore password from keychain (if building locally!)
 def pass = getPassword("Consolidate","android_keystore")
+def hasKeystorePassword = pass.length() > 0;
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -153,20 +154,21 @@ android {
         applicationId "io.gless.chat"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode VERSIONCODE as Integer
-        versionName "4.4.0"
+        versionCode versionMajor * 10000 + versionMinor * 100 + versionPatch
+        versionName "${versionMajor}.${versionMinor}.${versionPatch}"
         vectorDrawables.useSupportLibrary = true
         manifestPlaceholders = [BugsnagAPIKey: BugsnagAPIKey as String]
+
+        setProperty("archivesBaseName", "consolidate-chat.$versionName")
     }
 
     signingConfigs {
-        release {
-            if (project.hasProperty('MYAPP_UPLOAD_STORE_FILE')) {
-                storeFile file(MYAPP_UPLOAD_STORE_FILE)
-                storePassword pass
-                keyAlias MYAPP_UPLOAD_KEY_ALIAS
-                keyPassword pass
-            }
+        releaseLocal {
+            // Release build on local machine 
+            storeFile file(MYAPP_UPLOAD_STORE_FILE)
+            storePassword pass
+            keyAlias MYAPP_UPLOAD_KEY_ALIAS
+            keyPassword pass
         }
     }
     splits {
@@ -181,7 +183,15 @@ android {
         release {
             minifyEnabled enableProguardInReleaseBuilds
             setProguardFiles([getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'])
-            signingConfig signingConfigs.release
+
+            if(hasKeystorePassword) {
+                // Take local config
+                println('TAKING LOCAL SIGNING CONFIG')
+                signingConfig signingConfigs.releaseLocal
+            } else {
+                // Nothing else here, as in CI (Azure) mode we sign it after and not during the build
+                println('NO SIGNING')
+            }
         }
     }
     // applicationVariants are e.g. debug, release
