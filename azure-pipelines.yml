@@ -18,10 +18,6 @@ steps:
 - script: npm run android-build-release
   displayName: 'Android | Bundle and build'
 
-# PASST SO WENN NICHT SIGNED!
-- script: mv android/app/build/outputs/apk/release/app-release-unsigned.apk app-release.apk
-  displayName: 'Android | Postbuild'
-
 - task: DownloadSecureFile@1
   inputs:
     secureFile: 'my-upload-key.keystore'
@@ -29,7 +25,7 @@ steps:
 
 - task: AndroidSigning@3
   inputs:
-    apkFiles: 'app-release.apk'
+    apkFiles: 'android/app/build/outputs/apk/release/*.apk'
     apksign: true # Optional
     apksignerKeystoreFile: 'my-upload-key.keystore'
     apksignerKeystorePassword: '$(KEYSTORE_PASSWORD)'
@@ -44,8 +40,8 @@ steps:
     serverUrl: '$(FTP_SERVER)'
     username: '$(FTP_USER)'
     password: '$(FTP_PASSWORD)'
-    rootDirectory: '.'
-    filePatterns: 'app-release.apk'
+    rootDirectory: 'android/app/build/outputs/apk/release/'
+    filePatterns: '*.apk'
     remoteDirectory: '/downloads/android/'
     enableUtf8: true
     clean: false
