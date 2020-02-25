@@ -23,7 +23,7 @@ steps:
     mv android/app/build/outputs/apk/release/*.apk .
     brew install rename
     rename 's/-release-unsigned.apk/.apk/' *.apk
-  displayName: 'Android | Postbuild'
+  displayName: 'Android | Move and rename build artifact'
 
 - task: DownloadSecureFile@1
   inputs:
@@ -33,12 +33,12 @@ steps:
 - task: AndroidSigning@3
   inputs:
     apkFiles: '*.apk'
-    apksign: true # Optional
+    apksign: true
     apksignerKeystoreFile: 'my-upload-key.keystore'
     apksignerKeystorePassword: '$(KEYSTORE_PASSWORD)'
     apksignerKeystoreAlias: 'my-key-alias'
     apksignerKeyPassword: '$(KEYSTORE_PASSWORD)'
-  displayName: 'Android | Signing release APK'
+  displayName: 'Android | Signing APK'
 
 # Copy to Gless server
 - task: FtpUpload@2
@@ -55,4 +55,4 @@ steps:
     cleanContents: false
     preservePaths: true
     trustSSL: true
-  displayName: Android | Copy APK to Gless server'
+  displayName: 'Android | Copy APK to Gless server'
