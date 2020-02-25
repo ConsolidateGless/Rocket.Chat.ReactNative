@@ -18,6 +18,13 @@ steps:
 - script: npm run android-build-release
   displayName: 'Android | Bundle and build'
 
+# Move the file to root and strip out '-release-unsigned'
+- script: |
+    mv android/app/build/outputs/apk/release/*.apk .
+    brew install rename
+    rename 's/-release-unsigned.apk/.apk/' *.apk
+  displayName: 'Android | Postbuild'
+
 - task: DownloadSecureFile@1
   inputs:
     secureFile: 'my-upload-key.keystore'
@@ -25,7 +32,7 @@ steps:
 
 - task: AndroidSigning@3
   inputs:
-    apkFiles: 'android/app/build/outputs/apk/release/*.apk'
+    apkFiles: '*.apk'
     apksign: true # Optional
     apksignerKeystoreFile: 'my-upload-key.keystore'
     apksignerKeystorePassword: '$(KEYSTORE_PASSWORD)'
@@ -40,7 +47,7 @@ steps:
     serverUrl: '$(FTP_SERVER)'
     username: '$(FTP_USER)'
     password: '$(FTP_PASSWORD)'
-    rootDirectory: 'android/app/build/outputs/apk/release/'
+    rootDirectory: '.'
     filePatterns: '*.apk'
     remoteDirectory: '/downloads/android/'
     enableUtf8: true
