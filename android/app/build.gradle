@@ -158,10 +158,10 @@ android {
         applicationId "io.gless.chat"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode VERSIONCODE as Integer
-        versionName "4.4.0"
+        versionCode VERSIONCODE as Integer 
+        versionName VERSIONNAME as String
         vectorDrawables.useSupportLibrary = true
-        manifestPlaceholders = [BugsnagAPIKey: BugsnagAPIKey as String]
+        manifestPlaceholders = [BugsnagAPIKey: BugsnagAPIKey as String]   
     }
 
     signingConfigs {
