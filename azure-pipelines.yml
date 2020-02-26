@@ -15,8 +15,8 @@ steps:
 - script: yarn install
   displayName: 'Install dependencies'
 
-- script: npm run android-build-release
-  displayName: 'Android | Bundle and build'
+- script: npm run bundle-android
+  displayName: 'Android | Bundle'
 
 # Move the file to root and strip out '-release-unsigned'
 - script: |
