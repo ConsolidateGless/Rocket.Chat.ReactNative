@@ -35,7 +35,7 @@ import Navigation from '../../lib/Navigation';
 import { LISTENER } from '../../containers/Toast';
 import EventEmitter from '../../utils/events';
 import { appStart as appStartAction } from '../../actions';
-import { onReviewPress } from '../../utils/review';
+// import { onReviewPress } from '../../utils/review';
 
 const SectionSeparator = React.memo(({ theme }) => (
 	<View
@@ -249,7 +249,7 @@ class SettingsView extends React.Component {
 						theme={theme}
 					/>
 					<Separator theme={theme} />
-					<ListItem
+					{/* <ListItem
 						title={I18n.t('Review_this_app')}
 						showActionIndicator
 						onPress={onReviewPress}
@@ -266,7 +266,7 @@ class SettingsView extends React.Component {
 						right={this.renderDisclosure}
 						theme={theme}
 					/>
-					<Separator theme={theme} />
+					<Separator theme={theme} /> */}
 					<ListItem
 						title={I18n.t('Theme')}
 						showActionIndicator
@@ -278,7 +278,7 @@ class SettingsView extends React.Component {
 
 					<SectionSeparator theme={theme} />
 
-					<ListItem
+					{/* <ListItem
 						title={I18n.t('License')}
 						onPress={this.onPressLicense}
 						showActionIndicator
@@ -287,7 +287,7 @@ class SettingsView extends React.Component {
 						theme={theme}
 					/>
 
-					<Separator theme={theme} />
+					<Separator theme={theme} /> */}
 					<ListItem
 						title={I18n.t('Version_no', { version: getReadableVersion })}
 						onPress={this.copyAppVersion}
