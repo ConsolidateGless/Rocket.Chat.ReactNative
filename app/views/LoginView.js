@@ -243,7 +243,7 @@ class LoginView extends React.Component {
 				<Text style={[sharedStyles.loginTitle, sharedStyles.textBold, { color: themes[theme].titleText }]}>{I18n.t('Login')}</Text>
 				<TextInput
 					autoFocus
-					placeholder={Accounts_EmailOrUsernamePlaceholder || I18n.t('Username_or_email')}
+					placeholder={Accounts_EmailOrUsernamePlaceholder || I18n.t('Username_Consolidate')}
 					keyboardType='email-address'
 					returnKeyType='next'
 					iconLeft='at'
@@ -256,7 +256,7 @@ class LoginView extends React.Component {
 				/>
 				<TextInput
 					inputRef={(e) => { this.passwordInput = e; }}
-					placeholder={Accounts_PasswordPlaceholder || I18n.t('Password')}
+					placeholder={Accounts_PasswordPlaceholder || I18n.t('Password_Consolidate')}
 					returnKeyType='send'
 					iconLeft='key'
 					secureTextEntry
