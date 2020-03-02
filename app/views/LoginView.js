@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+// import {
+// 	Keyboard, Text, ScrollView, View, StyleSheet, Alert
+// } from 'react-native';
 import {
-	Keyboard, Text, ScrollView, View, StyleSheet, Alert
+	Keyboard, Text, ScrollView, StyleSheet, Alert
 } from 'react-native';
 import { connect } from 'react-redux';
 import { SafeAreaView } from 'react-navigation';
@@ -24,19 +27,19 @@ import { themedHeader } from '../utils/navigation';
 import { isTablet } from '../utils/deviceInfo';
 
 const styles = StyleSheet.create({
-	bottomContainer: {
-		flexDirection: 'column',
-		alignItems: 'center',
-		marginTop: 10
-	},
-	dontHaveAccount: {
-		...sharedStyles.textRegular,
-		fontSize: 13
-	},
-	createAccount: {
-		...sharedStyles.textSemibold,
-		fontSize: 13
-	},
+	// bottomContainer: {
+	// 	flexDirection: 'column',
+	// 	alignItems: 'center',
+	// 	marginTop: 10
+	// },
+	// dontHaveAccount: {
+	// 	...sharedStyles.textRegular,
+	// 	fontSize: 13
+	// },
+	// createAccount: {
+	// 	...sharedStyles.textSemibold,
+	// 	fontSize: 13
+	// },
 	loginTitle: {
 		marginVertical: 0,
 		marginTop: 15
@@ -283,7 +286,7 @@ class LoginView extends React.Component {
 						theme={theme}
 					/>
 				)}
-				<View style={styles.bottomContainer}>
+				{/* <View style={styles.bottomContainer}>
 					<Text style={[styles.dontHaveAccount, { color: themes[theme].auxiliaryText }]}>{I18n.t('Dont_Have_An_Account')}</Text>
 					<Text
 						style={[styles.createAccount, { color: themes[theme].actionTintColor }]}
@@ -291,7 +294,7 @@ class LoginView extends React.Component {
 						testID='login-view-register'
 					>{I18n.t('Create_account')}
 					</Text>
-				</View>
+				</View> */}
 			</SafeAreaView>
 		);
 	}
