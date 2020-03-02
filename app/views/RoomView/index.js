@@ -47,7 +47,7 @@ import {
 	handleCommandReplyLatest
 } from '../../commands';
 import ModalNavigation from '../../lib/ModalNavigation';
-import { Review } from '../../utils/review';
+// import { Review } from '../../utils/review';
 import RoomClass from '../../lib/methods/subscriptions/room';
 
 const stateAttrsUpdate = [
@@ -472,7 +472,7 @@ class RoomView extends React.Component {
 		try {
 			await RocketChat.setReaction(shortname, messageId);
 			this.onReactionClose();
-			Review.pushPositiveEvent();
+			// Review.pushPositiveEvent();
 		} catch (e) {
 			log(e);
 		}
@@ -557,7 +557,7 @@ class RoomView extends React.Component {
 				this.list.current.update();
 			}
 			this.setLastOpen(null);
-			Review.pushPositiveEvent();
+			// Review.pushPositiveEvent();
 		});
 	};
 

@@ -42,7 +42,7 @@ import {
 	MENTIONS_TRACKING_TYPE_USERS
 } from './constants';
 import CommandsPreview from './CommandsPreview';
-import { Review } from '../../utils/review';
+// import { Review } from '../../utils/review';
 
 const imagePickerConfig = {
 	cropping: true,
@@ -507,7 +507,7 @@ class MessageBox extends Component {
 		};
 		try {
 			await RocketChat.sendFileMessage(rid, fileInfo, tmid, server, user);
-			Review.pushPositiveEvent();
+			// Review.pushPositiveEvent();
 		} catch (e) {
 			log(e);
 		}
