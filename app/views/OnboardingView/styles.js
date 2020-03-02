@@ -24,7 +24,9 @@ export default StyleSheet.create({
 		letterSpacing: 0,
 		fontSize: moderateScale(24),
 		alignSelf: 'center',
-		marginBottom: verticalScale(8)
+		textAlign: 'center',
+		marginBottom: verticalScale(8),
+		marginHorizontal: 15
 	},
 	subtitle: {
 		...sharedStyles.textRegular,
