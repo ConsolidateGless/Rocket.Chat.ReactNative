@@ -460,6 +460,7 @@ export default {
 	Websocket_disabled: 'Websockets sind auf diesem Server nicht aktiviert.\n{{contact}}',
 	Welcome: 'Herzlich willkommen',
 	Welcome_to_RocketChat: 'Willkommen bei Consolidate Chat',
+	Disclaimer_Consolidate: 'Diese App ist experimentell. Die Nutzung dieser App ist nur nach Rücksprache mit Consolidate möglich.',
 	Whats_your_2fa: 'Wie lautet Ihr 2FA-Code?',
 	Without_Servers: 'Ohne Server',
 	Write_External_Permission_Message: 'Consolidate Chat benötigt Zugriff auf Ihre Galerie um Bilder speichern zu können.',

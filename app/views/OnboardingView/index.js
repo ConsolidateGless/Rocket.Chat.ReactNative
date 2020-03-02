@@ -147,6 +147,7 @@ class OnboardingView extends React.Component {
 				<StatusBar theme={theme} />
 				<Image style={styles.onboarding} source={{ uri: 'onboarding' }} fadeDuration={0} />
 				<Text style={[styles.title, { color: themes[theme].titleText }]}>{I18n.t('Welcome_to_RocketChat')}</Text>
+				<Text style={[styles.subtitle, { color: themes[theme].bodyText, marginHorizontal: 15 }]}>{I18n.t('Disclaimer_Consolidate')}</Text>
 				{/* <Text style={[styles.subtitle, { color: themes[theme].auxiliaryText }]}>{I18n.t('Open_Source_Communication')}</Text> */}
 				<View style={[styles.buttonsContainer, isTablet && sharedStyles.tabletScreenContent]}>
 					<Button

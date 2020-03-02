@@ -460,6 +460,7 @@ export default {
 	Websocket_disabled: 'Websocket is disabled for this server.\n{{contact}}',
 	Welcome: 'Welcome',
 	Welcome_to_RocketChat: `Welcome to ${ APP_NAME }`,
+	Disclaimer_Consolidate: 'This app is experimental. The use of this app is only possible after consultation with Consolidate.',
 	Whats_your_2fa: 'What\'s your 2FA code?',
 	Without_Servers: 'Without Servers',
 	Write_External_Permission_Message: `${ APP_NAME } needs access to your gallery so you can save images.`,

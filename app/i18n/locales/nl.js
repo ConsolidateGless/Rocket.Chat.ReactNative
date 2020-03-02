@@ -455,6 +455,7 @@ export default {
 	Websocket_disabled: 'Websocket staat uit voor deze server.\n{{contact}}',
 	Welcome: 'Welkom',
 	Welcome_to_RocketChat: 'Welkom bij Rocket.Chat',
+	Disclaimer_Consolidate: 'Dit is een experimentele app. Gebruik van deze app is alleen mogelijk na overleg met Consolidate.',
 	Whats_your_2fa: 'Wat is je 2FA code?',
 	Without_Servers: 'Zonder Servers',
 	Write_External_Permission_Message: 'Rocket Chat moet bij je galerij kunnen om afbeeldingen op te slaan.',
