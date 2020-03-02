@@ -305,7 +305,7 @@ class NewServerView extends React.Component {
 								testID='new-server-view-button'
 								theme={theme}
 							/>
-							{ isIOS ? this.renderCertificatePicker() : null }
+							{/* { isIOS ? this.renderCertificatePicker() : null } */}
 						</View>
 					</SafeAreaView>
 				</ScrollView>
