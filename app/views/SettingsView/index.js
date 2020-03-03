@@ -230,7 +230,7 @@ class SettingsView extends React.Component {
 						</>
 					) : null}
 
-					<Separator theme={theme} />
+					{/* <Separator theme={theme} />
 					<ListItem
 						title={I18n.t('Contact_us')}
 						onPress={this.sendEmail}
@@ -238,7 +238,7 @@ class SettingsView extends React.Component {
 						testID='settings-view-contact'
 						right={this.renderDisclosure}
 						theme={theme}
-					/>
+					/> */}
 					<Separator theme={theme} />
 					<ListItem
 						title={I18n.t('Language')}
