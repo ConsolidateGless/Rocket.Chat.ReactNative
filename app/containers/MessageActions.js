@@ -111,8 +111,8 @@ class MessageActions extends React.Component {
 		}
 
 		// Report
-		this.options.push(I18n.t('Report'));
-		this.REPORT_INDEX = this.options.length - 1;
+		// this.options.push(I18n.t('Report'));
+		// this.REPORT_INDEX = this.options.length - 1;
 
 		// Delete
 		if (this.allowDelete(this.props)) {
