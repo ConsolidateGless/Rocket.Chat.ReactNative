@@ -67,4 +67,17 @@ Whenever a push to our `develop` branch is detected, tbe CI kicks in and builds 
 TBD. Need a lot of 🍻
 
 # Debugging
-`console.log` doesn't work, mates! Rocket.Chat uses [Reactotron](https://github.com/infinitered/reactotron). Follow the getting started there. Works more or less fine with Mac/iOS (Build your XCode project on your phone, then your Phone should connect in Reactotron.app), for Android a port issue exists.
+`console.log` doesn't work, mates! Rocket.Chat uses [Reactotron](https://github.com/infinitered/reactotron). Follow the getting started there. 
+
+## Mac/iOS
+Works more or less fine with Mac/iOS. Build your XCode project on your phone, then your Phone should connect in Reactotron.app. 
+
+## Android
+[For Android a port issue exists](https://github.com/infinitered/reactotron/issues/162). Follow these steps:
+
+```bash
+  adb reverse tcp:9090 tcp:9090
+  npm run android
+```
+
+Your ports should be forwarded to Reactotron and you'll see the logging info.
