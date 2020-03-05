@@ -47,7 +47,6 @@ steps:
     configuration: 'Release'
     sdk: 'iphoneos13.2'
     xcWorkspacePath: 'ios/RocketChatRN.xcworkspace'
-    xcodeVersion: '10'
     packageApp: true
     signingOption: 'auto'
     teamId: '$(APPLE_TEAM_ID)'
