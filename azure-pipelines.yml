@@ -1,7 +1,8 @@
 trigger:
   branches:
     include:
-    - develop
+#    - develop
+    - azure-pipelines
 
 pool:
   vmImage: 'macOS-10.15'
@@ -15,44 +16,59 @@ steps:
 - script: yarn install
   displayName: 'Install dependencies'
 
-- script: npm run bundle-android
-  displayName: 'Android | Bundle'
+# - script: npm run bundle-android
+#   displayName: 'Android | Bundle'
 
 # Move the file to root and strip out '-release-unsigned'
-- script: |
-    mv android/app/build/outputs/apk/release/*.apk .
-    brew install rename
-    rename 's/-release-unsigned.apk/.apk/' *.apk
-  displayName: 'Android | Move and rename build artifact'
+# - script: |
+#     mv android/app/build/outputs/apk/release/*.apk .
+#     brew install rename
+#     rename 's/-release-unsigned.apk/.apk/' *.apk
+#   displayName: 'Android | Move and rename build artifact'
 
-- task: DownloadSecureFile@1
-  inputs:
-    secureFile: 'my-upload-key.keystore'
-  displayName: 'Android | Download keystore file'
+# - task: DownloadSecureFile@1
+#   inputs:
+#     secureFile: 'my-upload-key.keystore'
+#   displayName: 'Android | Download keystore file'
 
-- task: AndroidSigning@3
+# - task: AndroidSigning@3
+#   inputs:
+#     apkFiles: '*.apk'
+#     apksign: true
+#     apksignerKeystoreFile: 'my-upload-key.keystore'
+#     apksignerKeystorePassword: '$(KEYSTORE_PASSWORD)'
+#     apksignerKeystoreAlias: 'my-key-alias'
+#     apksignerKeyPassword: '$(KEYSTORE_PASSWORD)'
+#   displayName: 'Android | Signing APK'
+
+- task: Xcode@5
   inputs:
-    apkFiles: '*.apk'
-    apksign: true
-    apksignerKeystoreFile: 'my-upload-key.keystore'
-    apksignerKeystorePassword: '$(KEYSTORE_PASSWORD)'
-    apksignerKeystoreAlias: 'my-key-alias'
-    apksignerKeyPassword: '$(KEYSTORE_PASSWORD)'
-  displayName: 'Android | Signing APK'
+    actions: 'archive'
+    configuration: 'Release'
+    sdk: 'iphoneos13.2'
+    xcWorkspacePath: 'ios/RocketChatRN.xcworkspace'
+    scheme: 'Release'
+    xcodeVersion: 11
+    packageApp: true
+    signingOption: 'auto'
+    teamId: '$(APPLE_TEAM_ID)'
+    destinationPlatformOption: 'iOS'
+  displayName: 'iOS | Building IPA'
+
 
 # Copy to Gless server
-- task: FtpUpload@2
-  inputs:
-    credentialsOption: 'inputs'
-    serverUrl: '$(FTP_SERVER)'
-    username: '$(FTP_USER)'
-    password: '$(FTP_PASSWORD)'
-    rootDirectory: '.'
-    filePatterns: '*.apk'
-    remoteDirectory: '/downloads/android/'
-    enableUtf8: true
-    clean: false
-    cleanContents: false
-    preservePaths: true
-    trustSSL: true
-  displayName: 'Android | Copy APK to Gless server'
+# - task: FtpUpload@2
+#   inputs:
+#     credentialsOption: 'inputs'
+#     serverUrl: '$(FTP_SERVER)'
+#     username: '$(FTP_USER)'
+#     password: '$(FTP_PASSWORD)'
+#     rootDirectory: '.'
+#     filePatterns: '*.apk'
+#     remoteDirectory: '/downloads/android/'
+#     enableUtf8: true
+#     clean: false
+#     cleanContents: false
+#     preservePaths: true
+#     trustSSL: true
+#   displayName: 'Android | Copy APK to Gless server'
