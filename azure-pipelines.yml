@@ -52,6 +52,7 @@ steps:
     signingOption: 'auto'
     teamId: '$(APPLE_TEAM_ID)'
     destinationPlatformOption: 'iOS'
+    destinationSimulators: 'iPhone 11'
   displayName: 'iOS | Building IPA'
 
 # Copy to Gless server
