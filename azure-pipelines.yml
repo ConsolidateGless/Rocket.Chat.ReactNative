@@ -46,7 +46,7 @@ steps:
     actions: 'archive'
     configuration: 'Release'
     sdk: 'iphoneos13.2'
-    xcWorkspacePath: '/ios/RocketChatRN.xcodeproj'
+    xcWorkspacePath: 'RocketChatRN.xcodeproj'
     scheme: 'RocketChatRN'
     packageApp: true
     signingOption: 'auto'
