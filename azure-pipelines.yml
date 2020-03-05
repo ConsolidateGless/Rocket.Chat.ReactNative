@@ -8,13 +8,13 @@ pool:
   vmImage: 'macOS-10.15'
 
 steps:
-#- task: NodeTool@0
-  #inputs:
-   # versionSpec: '12.16.1'
-  #displayName: 'Install Node.js'
+- task: NodeTool@0
+  inputs:
+    versionSpec: '12.16.1'
+  displayName: 'Install Node.js'
 
-#- script: yarn install
-  #displayName: 'Install dependencies'
+- script: yarn install
+  displayName: 'Install dependencies'
 
 # - script: npm run bundle-android
 #   displayName: 'Android | Bundle'
