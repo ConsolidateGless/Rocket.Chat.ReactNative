@@ -47,14 +47,12 @@ steps:
     configuration: 'Release'
     sdk: 'iphoneos13.2'
     xcWorkspacePath: 'ios/RocketChatRN.xcworkspace'
-    scheme: 'Release'
-    xcodeVersion: 11
+    xcodeVersion: '10'
     packageApp: true
     signingOption: 'auto'
     teamId: '$(APPLE_TEAM_ID)'
     destinationPlatformOption: 'iOS'
   displayName: 'iOS | Building IPA'
-
 
 # Copy to Gless server
 # - task: FtpUpload@2
