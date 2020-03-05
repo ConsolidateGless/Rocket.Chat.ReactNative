@@ -13,8 +13,8 @@ steps:
     versionSpec: '12.16.1'
   displayName: 'Install Node.js'
 
-- script: yarn install
-  displayName: 'Install dependencies'
+#- script: yarn install
+#  displayName: 'Install dependencies'
 
 # - script: npm run bundle-android
 #   displayName: 'Android | Bundle'
@@ -46,7 +46,7 @@ steps:
     actions: 'archive'
     configuration: 'Release'
     sdk: 'iphoneos13.2'
-    xcWorkspacePath: 'ios/RocketChatRN.xcodeproj'
+    xcWorkspacePath: '/ios/RocketChatRN.xcodeproj'
     scheme: 'RocketChatRN'
     packageApp: true
     signingOption: 'auto'
