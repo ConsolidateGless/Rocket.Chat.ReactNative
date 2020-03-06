@@ -7,6 +7,7 @@ Nutzen Sie den Chat von Consolidate um sich zu unterhalten und auszutauschen.
 **Full description**
 Als Ergänzung zum Consolidate Client gibt es nun den Consolidate Chat. Damit haben Sie in Ihren Unternehmen folgende Möglichkeiten:
 
+- Login mit bestehendem Consoldiate-Konto
 - Echtzeitkommunikation mit Mitarbeitern bzw. Kollegen
 - Teilen von Medieninhalten (Bilder, Video, etc.)
 - Erstellung von privaten und öffentlichen Kanälen
